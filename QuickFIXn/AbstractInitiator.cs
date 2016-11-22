@@ -281,12 +281,6 @@ namespace QuickFix
                 foreach (SessionID sessionID in disconnectedSessions)
                 {
                     Session session = Session.LookupSession(sessionID);
-                    if (null == session)
-                    {
-                        disconnected_.Remove(sessionID); // Session already disposed, will never reconnect
-                        continue;
-                    }
-                        
                     if (session.IsEnabled)
                     {
                         if (session.IsNewSession)
